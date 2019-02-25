@@ -134,5 +134,13 @@ module.exports = {
         "no-undefined": ERROR,
         "no-unused-vars": [ERROR, {args: "after-used"}],
         "no-use-before-define": ERROR,
+
+        // Node.js and CommonJS
+        "global-require": ERROR,
+        "no-buffer-constructor": ERROR,
+        "no-mixed-requires": WARNING,
+        "no-new-require": ERROR,
+        "no-path-concat": ERROR,
+        "no-sync": WARNING,
     },
 };
