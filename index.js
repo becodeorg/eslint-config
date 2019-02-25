@@ -123,5 +123,16 @@ module.exports = {
         "prefer-promise-reject-errors": ERROR,
         radix: [ERROR, "as-needed"],
         "require-await": ERROR,
+
+        // Variables
+        "no-delete-var": ERROR,
+        "no-label-var": ERROR,
+        "no-shadow": ERROR,
+        "no-shadow-restricted-names": ERROR,
+        "no-undef": ERROR,
+        "no-undef-init": ERROR,
+        "no-undefined": ERROR,
+        "no-unused-vars": [ERROR, {args: "after-used"}],
+        "no-use-before-define": ERROR,
     },
 };
