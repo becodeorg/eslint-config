@@ -6,15 +6,16 @@
  * started at 25/02/2019
  */
 
-const OFF = 0;
 const WARNING = 1;
 const ERROR = 2;
 
 module.exports = {
     env: {
+        browser: true,
         node: true,
         es6: true,
     },
+    parser: "babel-eslint",
     parserOptions: {
         ecmaVersion: 2019,
         sourceType: "module",
@@ -41,7 +42,7 @@ module.exports = {
         "no-empty-character-class": ERROR,
         "no-ex-assign": ERROR,
         "no-extra-boolean-cast": ERROR,
-        "no-extra-parens": ERROR,
+        "no-extra-parens": [ERROR, "all", {ignoreJSX: "multi-line"}],
         "no-extra-semi": ERROR,
         "no-func-assign": ERROR,
         "no-inner-declarations": ERROR,
@@ -94,7 +95,6 @@ module.exports = {
         "no-labels": ERROR,
         "no-lone-blocks": ERROR,
         "no-loop-func": ERROR,
-        "no-magic-numbers": WARNING,
         "no-multi-spaces": ERROR,
         "no-multi-str": ERROR,
         "no-new": ERROR,
