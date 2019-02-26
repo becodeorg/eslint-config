@@ -23,6 +23,12 @@ module.exports = {
             jsx: true,
         },
     },
+    plugins: ["react", "prettier"],
+    settings: {
+        react: {
+            version: "16.8",
+        },
+    },
     rules: {
         // Possible Errors
         "for-direction": ERROR,
@@ -169,5 +175,88 @@ module.exports = {
         "require-yield": ERROR,
         "rest-spread-spacing": [ERROR, "never"],
         "symbol-description": ERROR,
+
+        // Prettier
+        "prettier/prettier": [
+            ERROR,
+            {
+                singleQuote: false,
+                tabWidth: 4,
+                trailingComma: "all",
+                bracketSpacing: false,
+                jsxBracketSameLine: true,
+            },
+        ],
+
+        // React
+        "react/button-has-type": ERROR,
+        "react/display-name": WARNING,
+        "react/no-access-state-in-setstate": WARNING,
+        "react/no-array-index-key": ERROR,
+        "react/no-children-prop": ERROR,
+        "react/no-danger": ERROR,
+        "react/no-danger-with-children": ERROR,
+        "react/no-deprecated": ERROR,
+        "react/no-direct-mutation-state": ERROR,
+        "react/no-find-dom-node": ERROR,
+        "react/no-is-mounted": ERROR,
+        "react/no-multi-comp": ERROR,
+        "react/no-redundant-should-component-update": ERROR,
+        "react/no-render-return-value": ERROR,
+        "react/no-typos": ERROR,
+        "react/no-string-refs": ERROR,
+        "react/no-this-in-sfc": ERROR,
+        "react/no-unescaped-entities": ERROR,
+        "react/no-unknown-property": ERROR,
+        "react/no-will-update-set-state": ERROR,
+        "react/prefer-es6-class": ERROR,
+        "react/react-in-jsx-scope": ERROR,
+        "react/require-render-return": ERROR,
+        "react/self-closing-comp": ERROR,
+        "react/void-dom-elements-no-children": ERROR,
+
+        // React:jsx
+        "react/jsx-closing-bracket-location": [
+            ERROR,
+            {
+                selfClosing: "tag-aligned",
+                nonEmpty: "after-props",
+            },
+        ],
+        "react/jsx-closing-tag-location": ERROR,
+        "react/jsx-equals-spacing": ERROR,
+        "react/jsx-first-prop-new-line": ERROR,
+        "react/jsx-handler-names": ERROR,
+        "react/jsx-key": ERROR,
+        "react/jsx-max-depth": [WARNING, {max: 3}],
+        "react/jsx-no-comment-textnodes": ERROR,
+        "react/jsx-no-duplicate-props": ERROR,
+        "react/jsx-no-literals": ERROR,
+        "react/jsx-no-target-blank": ERROR,
+        "react/jsx-no-undef": ERROR,
+        "react/jsx-curly-brace-presence": [
+            ERROR,
+            {props: "always", children: "ignore"},
+        ],
+        "react/jsx-pascal-case": ERROR,
+        "react/jsx-props-no-multi-spaces": ERROR,
+        "react/jsx-tag-spacing": [
+            ERROR,
+            {beforeSelfClosing: "always", beforeClosing: "never"},
+        ],
+        "react/jsx-uses-react": ERROR,
+        "react/jsx-uses-vars": ERROR,
+        "react/jsx-wrap-multilines": [
+            ERROR,
+            {
+                declaration: "parens-new-line",
+                assignment: "parens-new-line",
+                return: "parens-new-line",
+                arrow: "parens",
+                condition: "parens",
+                logical: "parens",
+                prop: "parens",
+            },
+        ],
     },
 };

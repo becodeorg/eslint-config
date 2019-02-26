@@ -11,10 +11,15 @@
     "eslint",
     "configuration",
     "linter",
+    "prettier",
     "becode"
   ],
   "peerDependencies": {
-    "eslint": ">= 5"
+    "eslint": ">= 5.6",
+    "babel-eslint": ">= 10",
+    "prettier": ">= 1.14",
+    "eslint-plugin-react": ">= 7.11",
+    "eslint-plugin-prettier": ">= 3"
   },
   "author": "leny <leny@becode.org>",
   "license": "MIT",
