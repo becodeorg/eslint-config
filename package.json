@@ -13,6 +13,9 @@
     "linter",
     "becode"
   ],
+  "peerDependencies": {
+    "eslint": ">= 5"
+  },
   "author": "leny <leny@becode.org>",
   "license": "MIT",
   "bugs": {
