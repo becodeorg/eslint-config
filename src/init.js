@@ -43,7 +43,9 @@ module.exports = {
 
     spawnSync(
         "npm",
-        ["i", "--save-dev"].concat(Object.keys(peerDependencies)),
+        ["i", "--save-dev", "@becode/eslint-config"].concat(
+            Object.keys(peerDependencies),
+        ),
         {stdio: "inherit"},
     );
 
