@@ -12,6 +12,17 @@ This module contains the common ESLint rules configuration for BeCode project, i
 
 ## Usage
 
+### Automatic method
+
+You can also use the following command in your project:
+
+	npx @becode/eslint-config
+	
+That will create the eslint config file *and* install the needed dependencies.  
+Simple and easy.
+
+### Manual method
+
 To use our rules, you simply need to configure your `.eslintrc.js` to look like this:
 
 ```javascript
@@ -21,15 +32,6 @@ module.exports = {
 ```
 
 > cf. the official ESLint documentation [page about shareable configs](https://eslint.org/docs/developer-guide/shareable-configs#using-a-shareable-config).
-
-### Automatic method
-
-You can also use the following command in your project:
-
-	npx @becode/eslint-config
-	
-That will create the eslint config file *and* install the needed dependencies.  
-Simple and easy.
 
 * * *
 
