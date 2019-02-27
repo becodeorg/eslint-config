@@ -1,6 +1,6 @@
 /* becode/eslint-config
  *
- * /.eslintrc.js - ESLint configuration
+ * /index.js - ESLint shared configuration
  *
  * coded by leny@BeCode
  * started at 25/02/2019
