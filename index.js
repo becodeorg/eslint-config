@@ -156,7 +156,7 @@ module.exports = {
         "constructor-super": ERROR,
         "generator-star-spacing": ERROR,
         "no-class-assign": ERROR,
-        "no-confusing-arrow": ERROR,
+        "no-confusing-arrow": [ERROR, {allowParens: true}],
         "no-const-assign": ERROR,
         "no-dupe-class-members": ERROR,
         "no-duplicate-imports": ERROR,
