@@ -48,7 +48,11 @@ module.exports = {
         "no-empty-character-class": ERROR,
         "no-ex-assign": ERROR,
         "no-extra-boolean-cast": ERROR,
-        "no-extra-parens": [ERROR, "all", {ignoreJSX: "multi-line"}],
+        "no-extra-parens": [
+            ERROR,
+            "all",
+            {ignoreJSX: "multi-line", enforceForArrowConditionals: false},
+        ],
         "no-extra-semi": ERROR,
         "no-func-assign": ERROR,
         "no-inner-declarations": ERROR,
