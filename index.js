@@ -123,7 +123,7 @@ module.exports = {
         "no-sequences": ERROR,
         "no-throw-literal": ERROR,
         "no-unmodified-loop-condition": ERROR,
-        "no-unused-expressions": ERROR,
+        "no-unused-expressions": [ERROR, {allowShortCircuit: true}],
         "no-useless-call": ERROR,
         "no-useless-catch": ERROR,
         "no-useless-concat": ERROR,
