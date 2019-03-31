@@ -1,71 +1,71 @@
 {
-    "name": "@becode/eslint-config",
-    "version": "0.2.0",
-    "description": "ESLint default configuration for BeCode projects",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/becodeorg/eslint-config.git"
-    },
-    "keywords": [
-        "eslint",
-        "configuration",
-        "linter",
-        "prettier",
-        "becode"
-    ],
-    "main": "index.js",
-    "files": [
-        "bin"
-    ],
-    "bin": {
-        "becode-eslint-initializer": "./bin/init.js"
-    },
-    "scripts": {
-        "build": "npx babel src --out-dir bin",
-        "prepublishOnly": "npx babel src --out-dir bin",
-        "lint": "npx eslint --fix --cache src"
-    },
-    "dependencies": {
-        "chalk": "^2.4.1",
-        "commander": "^2.19.0",
-        "enquirer": "^2.0.7"
-    },
-    "devDependencies": {
-        "@babel/cli": "^7.1.5",
-        "@babel/core": "^7.1.6",
-        "@babel/preset-env": "^7.1.6",
-        "babel-eslint": "^10.0.1",
-        "eslint": "^5.14.1",
-        "eslint-plugin-prettier": "^3.0.1",
-        "eslint-plugin-react": "^7.12.4",
-        "eslint-plugin-unicorn": "^8.0.1",
-        "husky": "^1.1.4",
-        "lint-staged": "^8.0.4",
-        "prettier": "^1.16.4"
-    },
-    "lint-staged": {
-        "*.js": [
-            "npx eslint --fix --cache",
-            "git add"
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npx lint-staged"
-        }
-    },
-    "peerDependencies": {
-        "eslint": ">= 5.6",
-        "babel-eslint": ">= 10",
-        "prettier": ">= 1.14",
-        "eslint-plugin-react": ">= 7.11",
-        "eslint-plugin-prettier": ">= 3",
-        "eslint-plugin-unicorn": ">= 8"
-    },
-    "author": "leny <leny@becode.org>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/becodeorg/eslint-config/issues"
-    },
-    "homepage": "https://github.com/becodeorg/eslint-config#readme"
+  "name": "@becode/eslint-config",
+  "version": "0.2.0",
+  "description": "ESLint default configuration for BeCode projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/becodeorg/eslint-config.git"
+  },
+  "keywords": [
+    "eslint",
+    "configuration",
+    "linter",
+    "prettier",
+    "becode"
+  ],
+  "main": "index.js",
+  "files": [
+    "bin"
+  ],
+  "bin": {
+    "becode-eslint-initializer": "./bin/init.js"
+  },
+  "scripts": {
+    "build": "npx babel src --out-dir bin",
+    "prepublishOnly": "npx babel src --out-dir bin",
+    "lint": "npx eslint --fix --cache src"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "enquirer": "^2.0.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.14.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-unicorn": "^8.0.1",
+    "husky": "^1.1.4",
+    "lint-staged": "^8.0.4",
+    "prettier": "^1.16.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npx eslint --fix --cache",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "peerDependencies": {
+    "eslint": ">= 5.6",
+    "babel-eslint": ">= 10",
+    "prettier": ">= 1.14",
+    "eslint-plugin-react": ">= 7.11",
+    "eslint-plugin-prettier": ">= 3",
+    "eslint-plugin-unicorn": ">= 8"
+  },
+  "author": "leny <leny@becode.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/becodeorg/eslint-config/issues"
+  },
+  "homepage": "https://github.com/becodeorg/eslint-config#readme"
 }
