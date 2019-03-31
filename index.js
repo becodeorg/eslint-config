@@ -23,7 +23,7 @@ module.exports = {
             jsx: true,
         },
     },
-    plugins: ["react", "prettier"],
+    plugins: ["prettier", "react", "unicorn"],
     settings: {
         react: {
             version: "16.8",
@@ -261,5 +261,16 @@ module.exports = {
                 prop: "parens",
             },
         ],
+
+        // Unicorn: additional rules
+        "unicorn/error-message": ERROR,
+        "unicorn/filename-case": [ERROR, {case: "kebabCase"}],
+        "unicorn/new-for-builtins": ERROR,
+        "unicorn/no-abusive-eslint-disable": WARNING,
+        "unicorn/no-array-instanceof": ERROR,
+        "unicorn/no-for-loop": WARNING,
+        "unicorn/prefer-includes": ERROR,
+        "unicorn/prefer-query-selector": ERROR,
+        "unicorn/throw-new-error": ERROR,
     },
 };
