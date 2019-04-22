@@ -27,21 +27,21 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "commander": "^2.19.0",
+    "commander": "^2.20.0",
     "enquirer": "^2.0.7"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-unicorn": "^8.0.1",
+    "eslint-plugin-unicorn": "^8.0.2",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
-    "prettier": "^1.16.4"
+    "prettier": "^1.17.0"
   },
   "lint-staged": {
     "*.js": [
