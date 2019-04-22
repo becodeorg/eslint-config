@@ -21,6 +21,14 @@ You can also use the following command in your project:
 That will create the eslint config file *and* install the needed dependencies.  
 Simple and easy.
 
+#### (optional) Create `pre-commit` git hook
+
+You can also setup a git `pre-commit` hook to ensure that ESlint and Prettier are run *before* each commit, discarding commit if there's an error.
+
+Simply use the `--with-hook` flag: 
+
+	npx @becode/eslint-config --with-hook
+
 ### Manual method
 
 To use our rules, you simply need to configure your `.eslintrc.js` to look like this:
