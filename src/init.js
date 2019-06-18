@@ -19,6 +19,7 @@ import {spawnSync} from "child_process";
 const writeFile = promisify(fs.writeFile);
 
 const ESLINTRC = ".eslintrc.js";
+const PRETTIERRC = ".prettierrc";
 const PACKAGE_JSON = "package.json";
 
 const {peerDependencies} = require("../package.json");
@@ -26,20 +27,21 @@ const {peerDependencies} = require("../package.json");
 (async () => {
     const withHook = process.argv.includes("--with-hook");
 
-    const ok = await confirm( {
+    const ok = await confirm({
         name: "ok",
         message: [
-            `This will create an ${chalk.cyan(
+            `This will create the files ${chalk.cyan(
                 ".eslintrc.js",
-            )} file here and install the needed dependencies.`,
+            )} and ${chalk.cyan(
+                ".prettierrc",
+            )} here and install the needed dependencies.`,
             withHook
-            ? `It will also setup a ${chalk.yellow("pre-commit")} hook.`
-            : "",
+                ? `It will also setup a ${chalk.yellow("pre-commit")} hook.`
+                : "",
             "Are you ok?",
         ].join(" "),
         initial: false,
-    }
-    );
+    });
 
     if (!ok) {
         console.log(chalk.red("Abort."), "Bye.");
@@ -51,8 +53,27 @@ const {peerDependencies} = require("../package.json");
         `
 module.exports = {
     extends: "@becode",
-};
-        `,
+};`,
+        "utf8",
+    );
+
+    await writeFile(
+        path.resolve(process.cwd(), PRETTIERRC),
+        `{
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "overrides": [
+        {
+            "files": "*.json",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}`,
         "utf8",
     );
 
