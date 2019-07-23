@@ -231,7 +231,7 @@ module.exports = {
         "react/jsx-first-prop-new-line": ERROR,
         "react/jsx-handler-names": ERROR,
         "react/jsx-key": ERROR,
-        "react/jsx-max-depth": [WARNING, {max: 3}],
+        "react/jsx-max-depth": [WARNING, {max: 5}],
         "react/jsx-no-comment-textnodes": ERROR,
         "react/jsx-no-duplicate-props": ERROR,
         "react/jsx-no-literals": ERROR,
