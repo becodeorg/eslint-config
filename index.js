@@ -51,7 +51,11 @@ module.exports = {
         "no-extra-parens": [
             ERROR,
             "all",
-            {ignoreJSX: "all", enforceForArrowConditionals: false},
+            {
+                ignoreJSX: "all",
+                enforceForArrowConditionals: false,
+                nestedBinaryExpressions: false,
+            },
         ],
         "no-extra-semi": ERROR,
         "no-func-assign": ERROR,
