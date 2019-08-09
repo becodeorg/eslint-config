@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "commander": "^2.20.0",
+    "commander": "^3.0.0",
     "enquirer": "^2.0.7"
   },
   "devDependencies": {
