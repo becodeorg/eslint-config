@@ -15,6 +15,7 @@ import fs from "fs";
 import {confirm} from "enquirer";
 import chalk from "chalk";
 import {spawnSync} from "child_process";
+import os from "os";
 
 const writeFile = promisify(fs.writeFile);
 
@@ -81,11 +82,15 @@ module.exports = {
 
     withHook && dependencies.push("husky", "lint-staged");
 
-    spawnSync(
-        "npm",
-        ["i", "--save-dev", "@becode/eslint-config"].concat(dependencies),
-        {stdio: "inherit"},
-    );
+    const cantInstallDependencies = os.platform() === "win32";
+
+    if (!cantInstallDependencies) {
+        spawnSync(
+            "npm",
+            ["i", "--save-dev", "@becode/eslint-config"].concat(dependencies),
+            {stdio: "inherit"},
+        );
+    }
 
     if (withHook) {
         const packagePath = path.resolve(process.cwd(), PACKAGE_JSON);
@@ -112,4 +117,13 @@ module.exports = {
     }
 
     console.log("🎉", chalk.green("Success!"));
+
+    if (cantInstallDependencies) {
+        console.log(
+            "⚠️",
+            chalk.bold.yellow("WARNING:"),
+            "Your system doesn't allow to install dependencies by this script. To complete your install, please run the following command:\n\t",
+            `npm install --save-dev ${dependencies.join(" ")}`,
+        );
+    }
 })();
