@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - name: Create npmrc file
+        run: echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}' > .npmrc
       - name: Install dependencies
         run: npm ci
         env:
@@ -29,5 +31,3 @@ jobs:
           DISABLE_OPENCOLLECTIVE: true
       - name: Publish
         run: npm publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
