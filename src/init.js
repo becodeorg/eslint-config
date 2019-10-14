@@ -25,7 +25,17 @@ const PACKAGE_JSON = "package.json";
 const {peerDependencies} = require("../package.json");
 
 (async () => {
-    const withHook = process.argv.includes("--with-hook");
+    const withHook =
+        process.argv.includes("--with-hook") ||
+        process.argv.includes("--with-hooks");
+    const withScripts =
+        process.argv.includes("--with-script") ||
+        process.argv.includes("--with-scripts");
+
+    const adds = [];
+
+    withHook && adds.push(`a ${chalk.yellow("pre-commit")} hook`);
+    withScripts && adds.push(`a couple of ${chalk.yellow("npm scripts")}`);
 
     const ok = await confirm({
         name: "ok",
@@ -35,9 +45,7 @@ const {peerDependencies} = require("../package.json");
             )} and ${chalk.cyan(
                 ".prettierrc",
             )} here and install the needed dependencies.`,
-            withHook
-                ? `It will also setup a ${chalk.yellow("pre-commit")} hook.`
-                : "",
+            adds.length ? `It will also setup ${adds.join(" and ")}.` : "",
             "Are you ok?",
         ].join(" "),
         initial: false,
@@ -90,11 +98,41 @@ module.exports = {
     if (withHook) {
         const packagePath = path.resolve(process.cwd(), PACKAGE_JSON);
 
+        // eslint-disable-next-line global-require
+        const packageProps = require(packagePath);
+
+        if (withScripts) {
+            if (packageProps.scripts && packageProps.scripts.lint) {
+                console.log(
+                    "🤔",
+                    `You already have a ${chalk.cyan(
+                        "lint",
+                    )} script in your ${chalk.yellow("package.json")}. Skip.`,
+                );
+            } else {
+                !packageProps.scripts && (packageProps.scripts = {});
+
+                packageProps.scripts.lint = "npx eslint --fix --cache src";
+
+                console.log(
+                    "🖐",
+
+                    `There's now a ${chalk.cyan(
+                        "lint",
+                    )} script in your ${chalk.yellow(
+                        "package.json",
+                    )}. This script assumes your files are in the ${chalk.cyan(
+                        "src",
+                    )} folder. Correct the path in your package.json if needed.`,
+                );
+            }
+        }
+
         await writeFile(
             packagePath,
             JSON.stringify(
                 {
-                    ...require(packagePath), // eslint-disable-line global-require
+                    ...packageProps,
                     "lint-staged": {
                         "*.js": ["npx eslint --fix --cache", "git add"],
                     },
