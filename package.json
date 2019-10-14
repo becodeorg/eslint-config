@@ -1,6 +1,6 @@
 {
   "name": "@becode/eslint-config",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "ESLint default configuration for BeCode projects",
   "repository": {
     "type": "git",
