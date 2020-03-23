@@ -3,6 +3,7 @@
     "tabWidth": 4,
     "trailingComma": "all",
     "bracketSpacing": false,
+    "arrowParens": "avoid",
     "jsxBracketSameLine": true,
     "overrides": [
         {
