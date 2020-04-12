@@ -134,6 +134,7 @@ module.exports = {
                 {
                     ...packageProps,
                     "lint-staged": {
+                        "*.json": ["npx prettier --write"],
                         "*.js": ["npx eslint --fix --cache"],
                     },
                     husky: {
