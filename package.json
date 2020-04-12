@@ -1,6 +1,6 @@
 {
   "name": "@becode/eslint-config",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "ESLint default configuration for BeCode projects",
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "lint": "npx eslint --fix --cache src"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "commander": "^5.0.0",
     "cross-spawn": "^7.0.0",
     "enquirer": "^2.0.7"
@@ -39,7 +39,7 @@
     "eslint": "^6.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-unicorn": "^17.2.0",
+    "eslint-plugin-unicorn": "^19.0.1",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
     "prettier": "^2.0.1"

@@ -198,7 +198,7 @@ module.exports = {
         ],
 
         // React
-        "react/button-has-type": ERROR,
+        "react/button-has-type": WARNING,
         "react/no-access-state-in-setstate": WARNING,
         "react/no-array-index-key": ERROR,
         "react/no-children-prop": ERROR,
