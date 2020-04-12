@@ -134,7 +134,7 @@ module.exports = {
                 {
                     ...packageProps,
                     "lint-staged": {
-                        "*.js": ["npx eslint --fix --cache", "git add"],
+                        "*.js": ["npx eslint --fix --cache"],
                     },
                     husky: {
                         hooks: {
