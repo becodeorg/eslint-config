@@ -49,7 +49,7 @@ module.exports = {
         "no-ex-assign": ERROR,
         "no-extra-boolean-cast": ERROR,
         "no-extra-parens": [
-            ERROR,
+            WARNING,
             "all",
             {
                 ignoreJSX: "all",
