@@ -1,6 +1,6 @@
 {
   "name": "@becode/eslint-config",
-  "version": "0.12.1",
+  "version": "0.12.0",
   "description": "ESLint default configuration for BeCode projects",
   "repository": {
     "type": "git",
@@ -56,8 +56,7 @@
   },
   "peerDependencies": {
     "eslint": ">= 5.6",
-    "@babel/core": ">= 7.4",
-    "@babel/eslint-parser": ">= 7.12",
+    "babel-eslint": ">= 10",
     "prettier": ">= 1.14",
     "eslint-plugin-react": ">= 7.11",
     "eslint-plugin-prettier": ">= 3",
