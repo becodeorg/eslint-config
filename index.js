@@ -239,7 +239,6 @@ module.exports = {
         "react/jsx-max-depth": [WARNING, {max: 5}],
         "react/jsx-no-comment-textnodes": ERROR,
         "react/jsx-no-duplicate-props": ERROR,
-        "react/jsx-no-literals": ERROR,
         "react/jsx-no-target-blank": ERROR,
         "react/jsx-no-undef": ERROR,
         "react/jsx-curly-brace-presence": [
@@ -269,7 +268,6 @@ module.exports = {
 
         // Unicorn: additional rules
         "unicorn/error-message": ERROR,
-        "unicorn/filename-case": [ERROR, {case: "kebabCase"}],
         "unicorn/new-for-builtins": ERROR,
         "unicorn/no-abusive-eslint-disable": WARNING,
         "unicorn/no-array-instanceof": ERROR,
