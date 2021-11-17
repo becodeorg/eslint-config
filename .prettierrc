@@ -1,10 +1,10 @@
 {
     "singleQuote": false,
-    "arrowParens": "avoid",
     "tabWidth": 4,
     "trailingComma": "all",
     "bracketSpacing": false,
     "arrowParens": "avoid",
+    "endOfLine": "auto",
     "jsxBracketSameLine": true,
     "overrides": [
         {
